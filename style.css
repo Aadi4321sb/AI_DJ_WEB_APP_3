@@ -1,0 +1,66 @@
+.heading{
+    font-size: 25px;
+    width: 100%;
+    margin: 0px;
+    font-family: 'Silkscreen', cursive;
+    color: navy;
+}
+.note{
+    font-size: 20px;
+    color: black;
+    font-family: 'Teko', sans-serif;
+}
+body{
+    background-size: cover;
+}
+.div_speed{
+    float: left;
+}
+.div_speed_img{
+    width: 200px;
+    border-radius: 100px;
+}
+#speed{
+    font-size: 23px;
+    margin: 15px;
+    font-family: 'Lobster', cursive;
+}
+.div_volume{
+    float: right;
+}
+.div_volume_img{
+    width: 200px;
+    border-radius: 100px;
+}
+#volume{
+    font-size: 23px;
+    margin: 15px;
+    font-family: 'Lobster', cursive;
+}
+.play_button{
+    width: 130px;
+    font-size: 25px;
+    font-family: 'Silkscreen', cursive;
+    transition: all 0.5s;
+    cursor: pointer;
+    color: navy;
+}
+canvas{
+    border: 5px solid cyan;
+    border-radius: 30px;
+   
+}
+.copy_right_footer{
+    position: fixed;
+    color: white;
+    font-family: 'Silkscreen', cursive;
+    bottom: 0;
+   letter-spacing: 3px;
+   text-align: center;
+   background-color: dodgerblue;
+   width: 100%;
+   font-weight: bolder;
+   
+    
+}
+
