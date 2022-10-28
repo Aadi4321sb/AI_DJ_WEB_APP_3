@@ -1,8 +1,10 @@
 song = "";
-leftwristX = 0;
-leftwristY = 0;
-rightwristX = 0;
-rightwristY = 0;
+leftWristX = 0;
+leftWristY = 0;
+rightWristX = 0;
+rightWristY = 0;
+scoreLeftWrist = 0;
+
 function setup() {
     canvas = createCanvas(600,500);
     canvas.center();
@@ -14,6 +16,17 @@ function setup() {
 }
 function draw(){
     image(video, 0, 0, 600, 500)
+    fill("#000080")
+    stroke("#000080")
+if(scoreLeftWrist > 0.2)
+{
+    circle(leftWristX, leftWristY,20);
+    InNumberleftWristY = Number(leftWristY);
+    remove_decimals = floor(InNumberleftWristY);
+    volume = remove_decimals/500;
+    document.getElementById("volume").innerHTML = "Volume = "+volume;
+    song.setVolume(volume);
+}
 }
 function preload() {
     song = loadSound("bones.mp3");
@@ -31,13 +44,15 @@ function gotPoses(results)
 {
     if(results.length > 0)
     {console.log(results);
-        leftwristX = results[0].pose.leftwrist.x;
-        leftwristY = results[0].pose.leftwrist.y;
-        console.log("leftwristX = "+leftwristX+"leftwristY = "+leftwristY);
+        scoreLeftWrist = results[0].pose.keypoints[9].score;
+        console.log("scoreLeftWrist = "+ scoreLeftWrist);
+        leftWristX = results[0].pose.leftWrist.x;
+        leftWristY = results[0].pose.leftWrist.y;
+        console.log("leftwristX = "+leftWristX+"leftwristY = "+leftWristY);
 
-        rightwristX = results[0].pose.rightwrist.x;
-        rightwristY = results[0].pose.rightwrist.y;
-        console.log("rightwristX = "+rightwristX+"rightwristY = "+rightwristY);
+        rightWristX = results[0].pose.rightWrist.x;
+        rightWristY = results[0].pose.rightWrist.y;
+        console.log("rightwristX = "+rightWristX+"rightwristY = "+rightWristY);
 
     }
 }
